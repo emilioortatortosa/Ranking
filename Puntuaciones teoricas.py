@@ -2,26 +2,8 @@ import pandas as pd
 from openpyxl import load_workbook
 from datetime import datetime
 
-# ─── Detectar si estamos en Colab y forzar subida de archivos ───
-try:
-    from google.colab import files
-    # 1) Subida del Excel de respuestas
-    print("1) Sube: Sponsorship Prioritisation Form (respuestas).xlsx")
-    up1 = files.upload()
-    ruta_excel = next(iter(up1.keys()))
-    print("Usando", ruta_excel)
-
-    # 2) Subida del Excel de comparaciones
-    print("2) Sube: Comparaciones.xlsx")
-    up2 = files.upload()
-    ruta_pairs = next(iter(up2.keys()))
-    print("Usando", ruta_pairs)
-
-except ImportError:
-    # No estamos en Colab: uso nombres relativos en tu máquina local
-    ruta_excel = "Sponsorship Prioritisation Form (respuestas).xlsx"
-    ruta_pairs = "Comparaciones.xlsx"
-# ──────────────────────────────────────────────────────────────────
+ruta_excel = "Sponsorship Prioritisation Form (respuestas).xlsx"
+ruta_pairs = "Comparaciones.xlsx"
 
 try:
     #Leer archivo y mostrar 5 primeras filas
