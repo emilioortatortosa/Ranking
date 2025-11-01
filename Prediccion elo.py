@@ -71,9 +71,9 @@ reg.fit(X_norm, y)
 
 # 6) Evalúo en entrenamiento
 y_pred = reg.predict(X_norm)
-#print("MSE_train:", mean_squared_error(y,y_pred))
-#print("R2_train:", r2_score(y,y_pred))
-#print("Kendall τ:", kendalltau(y,y_pred)[0])
+print("MSE_train:", mean_squared_error(y,y_pred))
+print("R2_train:", r2_score(y,y_pred))
+print("Kendall τ:", kendalltau(y,y_pred)[0])
 
 # 7) Predicción inductiva para todos los niños
 df_all = df_feats.copy()
@@ -125,4 +125,5 @@ ws.conditional_formatting.add(f"C2:C{n_rows}", rule)
 wb.save(ruta_excel)
 
 print("✅ Hoja 'Urgency ranking' actualizada con:")
+
 
